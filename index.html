@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DentaWhite - privatna stomatološka ordinacija</title>
+  <meta name="description" content="DentaWhite, privatna stomatološka ordinacija u Zagrebu. Pregled, plombe, implantati, krunice, izbjeljivanje, ravnanje zuba i 3D snimanje u ordinaciji.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;display=swap">
+  <style>
+  body{margin:0;background:#FAFAF8;color:#1C1F24;font-family:'Manrope',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:#2C4D7E}a:hover{color:#1F3960}
+  .dw *,.dw *::before,.dw *::after{box-sizing:border-box}
+  .dw{background:#FAFAF8;color:#1C1F24;font-family:'Manrope',system-ui,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  .sec{padding:56px 0;border-top:1px solid #E3E4DF}
+  .dw h1,.dw h2,.dw h3{font-family:'Newsreader',Georgia,serif;font-weight:400;margin:0;color:#14171C;letter-spacing:-0.01em}
+  .dw h1{font-size:76px;line-height:1.02}
+  .dw h2{font-size:50px;line-height:1.08}
+  .dw h3{font-size:24px;line-height:1.25}
+  .dw p{max-width:65ch;margin:0 0 18px}
+  .eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2C4D7E;margin-bottom:24px}
+  .lead{font-size:20px;line-height:1.6;color:#454B55}
+  .muted{color:#5A606B}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;background:#2C4D7E;color:#fff;border:1px solid #2C4D7E;border-radius:6px;font-family:inherit;font-size:16px;font-weight:600;text-decoration:none;cursor:pointer}
+  .btn:hover{background:#1F3960;border-color:#1F3960;color:#fff}
+  .btn-sm{min-height:44px;padding:0 20px;font-size:15px}
+  .tlink{font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+  .ph{display:flex;align-items:center;justify-content:center;text-align:center;background:#E7E8E4;color:#5A606B;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:24px;border-radius:4px}
+  .dw{position:relative;overflow-x:clip}
+  .nav{position:absolute;top:0;left:0;right:0;z-index:3}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:120px;gap:24px}
+  .logo{display:inline-flex;align-items:center;gap:14px;font-family:'Newsreader',Georgia,serif;font-size:44px;color:#FFFFFF;text-decoration:none}
+  .logo-mark{flex:none}
+  .logo:hover{color:#FFFFFF}
+  .nav-links{display:flex;gap:48px;list-style:none;margin:0;padding:0}
+  .nav-links a{color:#FFFFFF;text-decoration:none;font-size:20px;font-weight:700;padding:10px 0;border-bottom:1px solid transparent}
+  .nav-links a:hover{color:#FFFFFF;border-bottom-color:#FFFFFF}
+  .hero{position:relative;overflow:hidden;background:#FAFAF8;padding:0 0 64px}
+  .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,77,126,.78) 0,rgba(44,77,126,.5) 120px,rgba(44,77,126,0) 260px),radial-gradient(ellipse 22% 46% at 68% 48%,rgba(44,77,126,0) 0%,rgba(44,77,126,0) 70%,rgba(44,77,126,.32) 100%),linear-gradient(90deg,rgba(44,77,126,.9) 0%,rgba(44,77,126,.78) 34%,rgba(44,77,126,0) 52%)}
+  .dw .hero-copy h1{color:#FFFFFF}
+  .hero-copy .lead{color:#E4EAF2}
+  .hero-copy .btn{background:#FFFFFF;border-color:#FFFFFF;color:#2C4D7E;min-height:64px;padding:0 36px;font-size:20px;font-weight:700}
+  .hero-copy .btn:hover{background:#EEF2F7;border-color:#EEF2F7;color:#1F3960}
+  .hero-copy .tlink{color:#FFFFFF;font-size:18px}
+  .hero-inner{position:relative;min-height:760px;display:flex;align-items:center;padding-top:216px;padding-bottom:72px}
+  .hero-mob{display:none}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:stretch}
+  .hero-copy{display:flex;flex-direction:column;gap:32px;max-width:560px}
+  .hero-copy .actions{margin-top:0;flex-direction:column;align-items:flex-start;gap:24px}
+  .hero .lead{margin:0}
+  .actions{display:flex;flex-wrap:wrap;align-items:center;gap:32px}
+  .facts{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#2C4D7E;border-radius:8px}
+  .fact{display:flex;flex-direction:column;gap:14px;padding:36px 36px 40px;border-left:1px solid rgba(255,255,255,.22)}
+  .fact:first-child{border-left:0}
+  .fact-icon{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.12);margin-bottom:6px}
+  .fact strong{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:28px;line-height:1.2;color:#FFFFFF}
+  .fact span{font-size:16px;line-height:1.55;color:#E4EAF2}
+  .about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 88px;align-items:start}
+  .about-grid h2{margin-bottom:36px}
+  .about-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 88px;margin-top:48px}
+  .sec-tint{background:#EEF2F7;border-top:0}
+  .sec-dark{background:#2C4D7E;border-top:0;color:#FFFFFF}
+  .dw .sec-dark h2,.dw .sec-dark h3,.sec-dark .quote blockquote,.sec-dark .quote figcaption strong,.sec-dark .ba-cap strong{color:#FFFFFF}
+  .sec-dark .muted,.sec-dark .quote figcaption{color:#D3DCE8}
+  .sec-dark .ph{background:#3B5D8F;color:#E4EAF2}
+  .sec-dark .ba-head{border-top-color:rgba(255,255,255,.22)}
+  .sec-tint + .sec{border-top:0}
+  .sec-accent{background:#2C4D7E;border-top:0;color:#FFFFFF}
+  .dw .sec-accent h2{color:#FFFFFF}
+  .sec-accent .lead{color:#E4EAF2}
+  .sec-accent .field label{color:#FFFFFF}
+  .sec-accent .field input,.sec-accent .field select,.sec-accent .field textarea{border-color:#FFFFFF}
+  .sec-accent .field input:focus,.sec-accent .field select:focus,.sec-accent .field textarea:focus{outline:2px solid #FFFFFF;outline-offset:2px}
+  .sec-accent .check{color:#E4EAF2}
+  .sec-accent .check a{color:#FFFFFF}
+  .sec-accent .check input{accent-color:#FFFFFF}
+  .sec-accent .form-foot{justify-content:center}
+  .sec-accent .btn{background:#FFFFFF;border-color:#FFFFFF;color:#2C4D7E;min-height:60px;padding:0 44px;font-size:18px;font-weight:700}
+  .sec-accent .btn:hover{background:#EEF2F7;border-color:#EEF2F7;color:#1F3960}
+  .sec-accent .info,.sec-accent .info div{border-color:rgba(255,255,255,.25)}
+  .sec-accent .info dt{color:#C9D5E6}
+  .sec-accent .info dd,.sec-accent .info dd a{color:#FFFFFF}
+  .sec-accent .map{border-color:rgba(255,255,255,.3) !important}
+  .dw .about-intro{margin:48px 0 0}
+  .benefits{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;position:relative;isolation:isolate}
+  .benefits::before{content:"";position:absolute;top:-28px;bottom:-152px;left:50%;width:calc(50% + 50vw);transform:translateX(-50%);background:#DCE4EF;border-radius:8px;z-index:-1}
+  .benefits-cta{position:relative;z-index:1;display:flex;justify-content:center;margin-top:60px}
+  .benefits li:first-child{border-radius:8px 0 0 8px}
+  .benefits li:last-child{border-radius:0 8px 8px 0}
+  .benefits li{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;min-height:260px;padding:36px 32px 40px;background:#2C4D7E}
+  .benefits li svg{position:absolute;top:50%;left:62%;width:118%;height:118%;transform:translate(-50%,-50%);opacity:.12;pointer-events:none}
+  .benefits li svg *{stroke:#FFFFFF;stroke-width:2.5px;vector-effect:non-scaling-stroke}
+  .benefits li strong,.benefits li span{position:relative}
+  .benefits strong{font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:32px;line-height:1.15;color:#FFFFFF}
+  .benefits span{font-size:16px;line-height:1.6;color:#E4EAF2}
+  .prices{display:flex;flex-direction:column;gap:24px}
+  .price-cat{background:#FFFFFF;border:1px solid #E3E4DF;border-radius:8px;padding:32px 36px 24px}
+  .dw .price-cat-title{font-size:32px;color:#2C4D7E;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid #E3E4DF}
+  .price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px;align-items:start}
+  .price-group h4{margin:0 0 8px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:22px;line-height:1.25;color:#2C4D7E}
+  .price-row{display:flex;align-items:baseline;gap:8px;padding:8px 0;font-size:15px;color:#454B55}
+  .price-row .dots{flex:1;min-width:12px;border-bottom:1px dotted #B9BEC6;transform:translateY(-4px)}
+  .price-row span:last-child{font-weight:600;color:#14171C;white-space:nowrap}
+  .price-note{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-top:72px;padding:32px 40px;background:#EEF2F7;border-radius:8px}
+  .dw .price-note p{margin:0;font-size:18px;max-width:52ch}
+  .sec-tint .field input,.sec-tint .field select,.sec-tint .field textarea{border-color:#C3CBD6}
+  .sec-tint .info,.sec-tint .info div{border-color:#D5DCE6}
+  .lead-doc{margin:0}
+  .lead-doc h3{font-size:50px;line-height:1.08;margin-bottom:36px}
+  .lead-doc p{font-size:16px;color:#454B55;margin-bottom:12px}
+  .points{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid #E3E4DF}
+  .points li{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid #E3E4DF;font-weight:500;font-size:16px}
+  .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center;margin-bottom:72px}
+  .sec-head p{margin:0}
+  .dw .sec-head-stack{display:block}
+  .dw .sec-head-stack h2{color:#2C4D7E}
+  .dw .sec-head-stack p{margin-top:20px;font-size:22px;max-width:none}
+  @media (min-width:1100px){.dw .sec-head-one p{white-space:nowrap}}
+  .services{display:flex;flex-direction:column;gap:56px}
+  .dw .svc-group-title{font-size:32px;color:#2C4D7E;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid #D5DCE6}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+  .svc{background:#FFFFFF;border:1px solid #DADBD6;border-radius:8px;overflow:hidden}
+  .svc summary{display:block;list-style:none;cursor:pointer}
+  .svc summary::-webkit-details-marker{display:none}
+  .svc summary:focus-visible{outline:2px solid #2C4D7E;outline-offset:-2px}
+  .svc-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px}
+  .svc h4{margin:0;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:26px;line-height:1.2;color:#2C4D7E}
+  .svc-toggle{flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid #C3CBD6;border-radius:50%;transition:transform .25s ease,background .25s ease}
+  .svc summary:hover .svc-toggle{background:#EEF2F7}
+  .svc[open] .svc-toggle{transform:rotate(45deg);background:#EEF2F7}
+  .svc[open]{border-color:#2C4D7E}
+  .svc-media{position:relative;overflow:hidden;background:#2C4D7E}
+  .svc-img{display:block;width:100%;aspect-ratio:16 / 10;object-fit:cover;border-radius:0}
+  .svc-body{padding:0 24px 24px}
+  .ph.svc-img{display:flex}
+  .num{display:block;margin-bottom:12px;font-size:13px;font-weight:700;color:#2C4D7E;letter-spacing:.12em}
+  .svc p{font-size:15.5px;line-height:1.6;color:#4C525C;margin:0}
+  .after-svc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;margin-top:64px}
+  .dw .after-svc p{margin:0;font-size:22px;font-weight:600;max-width:none}
+  .btn-lg{min-height:64px;padding:0 44px;font-size:20px;font-weight:700}
+  .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+  .quote{margin:0}
+  .quote blockquote{margin:0 0 28px;font-family:'Newsreader',Georgia,serif;font-size:23px;line-height:1.4;color:#14171C}
+  .quote figcaption{font-size:14px;color:#5A606B;line-height:1.5}
+  .quote figcaption strong{display:block;color:#1C1F24;font-weight:600}
+  .ba-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin:112px 0 40px;padding-top:56px;border-top:1px solid #E3E4DF}
+  .ba-head p{margin:0;font-size:15px}
+  .ba{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+  .ba-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .ba-pair .ph{height:220px;font-size:11px}
+  .ba-cap{margin-top:16px;font-size:15px;line-height:1.5}
+  .ba-cap strong{display:block;font-weight:600}
+  .contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:88px;align-items:start}
+  .contact-grid h2{margin-bottom:24px}
+  .form{display:grid;gap:24px;margin-top:48px}
+  .row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field label{font-size:14px;font-weight:600;color:#1C1F24}
+  .field input,.field select,.field textarea{width:100%;min-height:52px;padding:12px 16px;font-family:inherit;font-size:16px;color:#1C1F24;background:#FFFFFF;border:1px solid #C9CBC5;border-radius:6px}
+  .field textarea{min-height:140px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid #2C4D7E;outline-offset:1px;border-color:#2C4D7E}
+  .check{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.5;color:#454B55}
+  .check input{width:20px;height:20px;margin:1px 0 0;accent-color:#2C4D7E;flex:none}
+  .form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+  .form-foot span{font-size:14px;color:#5A606B}
+  .info{margin:0;border-top:1px solid #E3E4DF}
+  .info div{padding:22px 0;border-bottom:1px solid #E3E4DF}
+  .info dt{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5A606B;margin-bottom:6px}
+  .info dd{margin:0;font-size:18px;font-weight:500}
+  .info dd a{color:#1C1F24;text-decoration:none}
+  .map{height:240px;margin-top:32px}
+  .foot{background:#FFFFFF;border-top:1px solid #E3E4DF;padding:48px 0}
+  .foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;font-size:14px;color:#2C4D7E}
+  .foot-in nav{display:flex;flex-wrap:wrap;gap:28px}
+  .foot-in a{color:#2C4D7E;text-decoration:none;font-weight:600}
+  .foot-in a:hover{color:#1F3960;text-decoration:underline}
+  .menu{display:none;position:relative}
+  .menu-btn{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:8px;cursor:pointer;list-style:none}
+  .menu-btn::-webkit-details-marker{display:none}
+  .menu[open] .menu-btn{background:rgba(255,255,255,.14)}
+  .menu-list{position:absolute;right:0;top:calc(100% + 8px);z-index:5;min-width:240px;margin:0;padding:8px;list-style:none;background:#FFFFFF;border:1px solid #DADBD6;border-radius:8px}
+  .menu-list a{display:block;padding:14px 16px;border-radius:6px;color:#14171C;font-size:18px;font-weight:700;text-decoration:none}
+  .menu-list a:hover{background:#EEF2F7;color:#2C4D7E}
+  @media (max-width:1280px){
+  .logo{font-size:36px}
+  .logo-mark{width:50px;height:50px}
+  .nav-links{gap:32px}
+  .nav-links a{font-size:18px}
+  .dw .hero-copy h1{font-size:64px}
+  .hero-copy{max-width:480px}
+  .hero-bg{object-position:50% 45% !important}
+  }
+  @media (max-width:1079px){
+  .nav{position:relative;background:#2C4D7E}
+  .nav-in{height:88px}
+  .nav-links{display:none}
+  .menu{display:block}
+  .hero{padding:0 0 64px}
+  .hero-bg,.hero-scrim{display:none}
+  .hero-inner{min-height:0;padding-top:64px;padding-bottom:56px}
+  .hero-mob{display:block;width:100%;height:440px;object-fit:cover;object-position:60% 45%;border-radius:4px}
+  .hero-copy{gap:32px;max-width:none}
+  .dw .hero-copy h1{color:#14171C;font-size:60px}
+  .hero-copy .btn{background:#2C4D7E;border-color:#2C4D7E;color:#FFFFFF}
+  .hero-copy .btn:hover{background:#1F3960;border-color:#1F3960;color:#FFFFFF}
+  }
+  @media (max-width:1024px){
+  .dw h1{font-size:62px}
+  }
+  @media (max-width:768px){
+  .wrap{padding:0 20px}
+  .sec{padding:40px 0}
+  .dw h1{font-size:46px;line-height:1.06}
+  .dw h2{font-size:36px}
+  .dw h3{font-size:22px}
+  .lead{font-size:18px}
+  .nav{position:relative;background:#2C4D7E;border-bottom:0}
+  .nav-in{height:76px}
+  .logo{font-size:28px}
+  .logo-mark{width:38px;height:38px}
+  .nav-links{display:none}
+  .hero{padding:0 0 64px}
+  .hero-bg,.hero-scrim{display:none}
+  .hero-inner{min-height:0;padding-top:48px;padding-bottom:48px}
+  .hero-mob{display:block;width:100%;height:320px;object-fit:cover;object-position:60% 45%;border-radius:4px}
+  .hero-copy{gap:28px;max-width:none}
+  .dw .hero-copy h1{color:#14171C;font-size:46px}
+  .hero-mob{height:320px}
+  .hero-copy .lead{color:#454B55}
+  .hero-copy .btn{background:#2C4D7E;border-color:#2C4D7E;color:#FFFFFF;min-height:56px;font-size:18px}
+  .hero-copy .tlink{color:#2C4D7E}
+  .hero-copy .actions{margin-top:0;flex-direction:column;align-items:flex-start;gap:24px}
+  .hero-grid,.about-grid,.sec-head,.contact-grid{grid-template-columns:minmax(0,1fr);gap:48px}
+  .lead-doc h3{font-size:36px;margin-bottom:24px}
+  .benefits{grid-template-columns:minmax(0,1fr);gap:3px}
+  .benefits li{min-height:0;padding:28px 24px 32px}
+  .benefits li:first-child{border-radius:8px 8px 0 0}
+  .benefits li:last-child{border-radius:0 0 8px 8px}
+  .benefits strong{font-size:26px}
+  .prices{gap:40px}
+  .price-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .dw .price-cat-title{font-size:26px}
+  .price-cat{padding:24px 20px 16px}
+  .price-note{padding:24px;margin-top:48px}
+  .dw .about-intro{margin:32px 0 0}
+  .about-cols{grid-template-columns:minmax(0,1fr);gap:0;margin-top:32px}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .fact{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding:28px 24px}
+  .fact:first-child{border-top:0}
+  .fact strong{font-size:24px}
+  .about-ph{height:300px !important}
+  .sec-head{margin-bottom:48px;gap:24px}
+  .dw .after-svc p{font-size:19px}
+  .dw .sec-head-stack p{font-size:19px}
+  .svc-grid{grid-template-columns:minmax(0,1fr)}
+  .dw .svc-group-title{font-size:26px}
+  .svc h4{font-size:23px}
+  .services{gap:40px}
+  .svc-body{padding:0 20px 20px}
+  .svc-head{padding:18px 20px}
+  .quotes,.ba{grid-template-columns:minmax(0,1fr);gap:48px}
+  .ba-head{margin-top:72px}
+  .ba-pair .ph{height:180px}
+  .row2{grid-template-columns:minmax(0,1fr)}
+  .btn{width:100%}
+  .nav .btn{width:auto}
+  }
+  </style>
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div class="dw">
+
+<header class="nav">
+<div class="wrap nav-in">
+<a class="logo" href="#vrh" aria-label="DentaWhite, na vrh stranice">
+<svg class="logo-mark" width="60" height="60" viewBox="0 0 48 48" aria-hidden="true">
+<defs>
+<linearGradient id="dwToothFill" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#FFFFFF"></stop>
+<stop offset="0.55" stop-color="#E9EEF5"></stop>
+<stop offset="1" stop-color="#AFC0D6"></stop>
+</linearGradient>
+<linearGradient id="dwToothShade" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#2C4D7E" stop-opacity="0"></stop>
+<stop offset="0.6" stop-color="#2C4D7E" stop-opacity="0"></stop>
+<stop offset="1" stop-color="#2C4D7E" stop-opacity="0.35"></stop>
+</linearGradient>
+<clipPath id="dwToothClip"><path d="M16 8c-5 0-8 3.6-8 9 0 4 1.4 6.6 2.4 10 1 3.6 1.2 8 2.2 12.4.6 3 3.8 3.2 4.6.2l2-8c.4-1.6 1.4-2.4 2.8-2.4s2.4.8 2.8 2.4l2 8c.8 3 4 2.8 4.6-.2 1-4.4 1.2-8.8 2.2-12.4 1-3.4 2.4-6 2.4-10C40 11.6 37 8 32 8c-3.2 0-5.2 1.6-8 1.6S19.2 8 16 8z"></path></clipPath>
+</defs>
+<path d="M16 8c-5 0-8 3.6-8 9 0 4 1.4 6.6 2.4 10 1 3.6 1.2 8 2.2 12.4.6 3 3.8 3.2 4.6.2l2-8c.4-1.6 1.4-2.4 2.8-2.4s2.4.8 2.8 2.4l2 8c.8 3 4 2.8 4.6-.2 1-4.4 1.2-8.8 2.2-12.4 1-3.4 2.4-6 2.4-10C40 11.6 37 8 32 8c-3.2 0-5.2 1.6-8 1.6S19.2 8 16 8z" fill="url(#dwToothFill)"></path>
+<g clip-path="url(#dwToothClip)">
+<rect x="8" y="8" width="32" height="36" fill="url(#dwToothShade)"></rect>
+<ellipse cx="29" cy="40" rx="9" ry="7" fill="#2C4D7E" fill-opacity="0.18"></ellipse>
+<ellipse cx="16.5" cy="15.5" rx="4" ry="5.5" fill="#FFFFFF" fill-opacity="0.95" transform="rotate(-20 16.5 15.5)"></ellipse>
+</g>
+<path d="M24 9.8c-1 2.4-1 5.2.4 7.6" fill="none" stroke="#2C4D7E" stroke-opacity="0.3" stroke-width="1.2" stroke-linecap="round"></path>
+<path d="M16 8c-5 0-8 3.6-8 9 0 4 1.4 6.6 2.4 10 1 3.6 1.2 8 2.2 12.4.6 3 3.8 3.2 4.6.2l2-8c.4-1.6 1.4-2.4 2.8-2.4s2.4.8 2.8 2.4l2 8c.8 3 4 2.8 4.6-.2 1-4.4 1.2-8.8 2.2-12.4 1-3.4 2.4-6 2.4-10C40 11.6 37 8 32 8c-3.2 0-5.2 1.6-8 1.6S19.2 8 16 8z" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="0.8"></path>
+<path d="M41 1.5l1.3 3.7 3.7 1.3-3.7 1.3-1.3 3.7-1.3-3.7-3.7-1.3 3.7-1.3z" fill="#FFFFFF"></path>
+</svg>
+DentaWhite
+</a>
+<nav aria-label="Glavna navigacija">
+<ul class="nav-links">
+<li><a href="#usluge">Usluge</a></li>
+<li><a href="#cjenik">Cjenik</a></li>
+<li><a href="#klijenti">Klijenti</a></li>
+<li><a href="#o-nama">O nama</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+<details class="menu">
+<summary class="menu-btn" aria-label="Otvori izbornik"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></summary>
+<ul class="menu-list">
+<li><a href="#usluge">Usluge</a></li>
+<li><a href="#cjenik">Cjenik</a></li>
+<li><a href="#klijenti">Klijenti</a></li>
+<li><a href="#o-nama">O nama</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
+</ul>
+</details>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="vrh">
+<img class="hero-bg" src="hero-pregled.jpg" alt="Pacijentica u stomatološkoj stolici tijekom pregleda" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%">
+<div class="hero-scrim" aria-hidden="true"></div>
+<div class="wrap hero-inner">
+<div class="hero-copy">
+<h1>Bijeli osmijeh, bez žurbe i muke</h1>
+<img class="hero-mob" src="hero-pregled.jpg" alt="" aria-hidden="true">
+<div class="actions">
+<a class="btn" href="#kontakt">Pošalji upit za pregled</a>
+</div>
+</div>
+</div>
+<div class="wrap">
+<div class="facts">
+<div class="fact">
+<span class="fact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></span>
+<strong>Sve na jednoj adresi</strong>
+<span>Devet područja stomatologije, od prvog pregleda do implantata.</span>
+</div>
+<div class="fact">
+<span class="fact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"></path><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"></path></svg></span>
+<strong>3D CBCT u ordinaciji</strong>
+<span>Snimamo na licu mjesta, bez odlaska u drugi centar.</span>
+</div>
+<div class="fact">
+<span class="fact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 13h7M9 17h5"></path></svg></span>
+<strong>Cijena unaprijed</strong>
+<span>Pisani plan terapije i cijena prije svakog zahvata.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec sec-tint" id="usluge">
+<div class="wrap">
+<div class="sec-head sec-head-stack">
+<div>
+<h2>Od prvog pregleda do implantata</h2>
+</div>
+<p class="lead">Sve radimo na jednom mjestu. Ne morate skupljati nalaze i snimke po gradu.</p>
+</div>
+
+<div class="services">
+<div class="svc-group">
+<h3 class="svc-group-title">Pregled i zdravlje desnih</h3>
+<div class="svc-grid">
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-pregled.jpg" alt="Stomatolog bilježi nalaz tijekom razgovora s pacijenticom">
+</div>
+<div class="svc-head">
+<h4>Pregled i plan liječenja</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Pregledamo zube i desni i objasnimo što smo vidjeli. Odlazite s pisanim planom: što treba napraviti, kojim redom i koliko košta.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-3d-snimka.jpg" alt="3D CBCT snimka čeljusti na monitoru u ordinaciji">
+</div>
+<div class="svc-head">
+<h4>3D snimka zuba i čeljusti</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Snimimo zube, korijene i kost u tri dimenzije, u samoj ordinaciji. Vidimo ono što običan rendgen ne pokazuje, pa liječenje planiramo preciznije.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-ciscenje-kamenca.jpg" alt="Uklanjanje kamenca uz rub desni ultrazvučnim instrumentom">
+</div>
+<div class="svc-head">
+<h4>Čišćenje kamenca i liječenje desni</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Uklonimo kamenac iznad i ispod ruba desni. Desni se smire i prestanu krvariti, a zubi ostaju čvrsto na svom mjestu.</p>
+</div>
+</details>
+</div>
+</div>
+<div class="svc-group">
+<h3 class="svc-group-title">Popravak i zamjena zuba</h3>
+<div class="svc-grid">
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-bijele-plombe.jpg" alt="Kutnjak s novim ispunom u boji zuba">
+</div>
+<div class="svc-head">
+<h4>Bijele plombe</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Uklonimo karijes i zub zatvorimo ispunom u boji zuba. Zub opet normalno koristite, a plomba se ne vidi kad se nasmijete.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-lijecenje-zivca.jpg" alt="Liječenje korijenskog kanala uz endodontski instrument">
+</div>
+<div class="svc-head">
+<h4>Liječenje zubnog živca</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Kad zub boli zbog upaljenog živca, očistimo i zatvorimo njegove kanale. Bol prestaje, a zub ostaje u ustima umjesto da ga vadimo.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-implantati.jpg" alt="Ugradnja dentalnog implantata u čeljust">
+</div>
+<div class="svc-head">
+<h4>Zubni implantati</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Izgubljeni zub zamijenimo implantatom koji stoji u kosti kao pravi korijen, a na njega postavimo krunicu. Novi zub je stabilan i ne opterećuje susjedne zube.</p>
+</div>
+</details>
+</div>
+</div>
+<div class="svc-group">
+<h3 class="svc-group-title">Ljepši osmijeh</h3>
+<div class="svc-grid">
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-izbjeljivanje.jpg" alt="Izbjeljivanje zuba uz gel i plavo svjetlo">
+</div>
+<div class="svc-head">
+<h4>Izbjeljivanje zuba</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Zube posvijetlimo u ordinaciji, uz zaštitu desni. Nijansu dogovorimo prije početka, da osmijeh izgleda svjetlije, a i dalje prirodno.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-ravnanje-zuba.jpg" alt="Prozirna ortodontska folija ispred zuba">
+</div>
+<div class="svc-head">
+<h4>Ravnanje zuba</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Nakrivljene zube i nepravilan zagriz ispravljamo aparatićem. Rezultat je ravan osmijeh i zagriz koji ravnomjerno opterećuje zube.</p>
+</div>
+</details>
+<details class="svc">
+<summary>
+<div class="svc-media">
+<img class="svc-img" src="usluga-krunice-mostovi.jpg" alt="Postavljanje keramičke krunice na zub">
+</div>
+<div class="svc-head">
+<h4>Krunice i mostovi</h4>
+<span class="svc-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+</div>
+</summary>
+<div class="svc-body">
+<p>Oštećen ili izgubljen zub nadomjestimo krunicom ili mostom koji izgleda kao vaš zub. Opet žvačete bez straha i smijete se bez skrivanja.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+
+<div class="after-svc">
+<p>Ne znate što vam treba?<br>Počnite s pregledom.</p>
+<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled</a>
+</div>
+</div>
+</section>
+
+<section class="sec" id="cjenik">
+<div class="wrap">
+<div class="sec-head sec-head-stack sec-head-one">
+<div>
+<h2>Cijene koje znate unaprijed</h2>
+</div>
+<p class="lead">Niste sigurni što vam treba?<br>Na prvom pregledu dobivate plan terapije s cijenom za svaki korak.</p>
+</div>
+<div class="prices">
+<div class="price-cat">
+<h3 class="price-cat-title">Pregled i zdravlje desnih</h3>
+<div class="price-grid">
+<div class="price-group">
+<h4>Pregled i plan liječenja</h4>
+<div class="price-row"><span>Pregled i konzultacije</span><span class="dots" aria-hidden="true"></span><span>[00] €</span></div>
+</div>
+<div class="price-group">
+<h4>3D snimka zuba i čeljusti</h4>
+<div class="price-row"><span>3D CBCT snimka</span><span class="dots" aria-hidden="true"></span><span>[00] €</span></div>
+</div>
+<div class="price-group">
+<h4>Čišćenje kamenca i liječenje desni</h4>
+<div class="price-row"><span>Uklanjanje kamenca i poliranje</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Liječenje desni, po četvrtini čeljusti</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+</div>
+</div>
+<div class="price-cat">
+<h3 class="price-cat-title">Popravak i zamjena zuba</h3>
+<div class="price-grid">
+<div class="price-group">
+<h4>Bijele plombe</h4>
+<div class="price-row"><span>Plomba na jednoj plohi zuba</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Plomba na više ploha zuba</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+<div class="price-group">
+<h4>Liječenje zubnog živca</h4>
+<div class="price-row"><span>Liječenje jednog kanala</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+<div class="price-group">
+<h4>Zubni implantati</h4>
+<div class="price-row"><span>Implantat s ugradnjom</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Krunica na implantatu</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+</div>
+</div>
+<div class="price-cat">
+<h3 class="price-cat-title">Ljepši osmijeh</h3>
+<div class="price-grid">
+<div class="price-group">
+<h4>Izbjeljivanje zuba</h4>
+<div class="price-row"><span>Izbjeljivanje u ordinaciji</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+<div class="price-group">
+<h4>Ravnanje zuba</h4>
+<div class="price-row"><span>Fiksni aparatić, po čeljusti</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Mobilni aparatić</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+<div class="price-group">
+<h4>Krunice i mostovi</h4>
+<div class="price-row"><span>Cirkon-keramička krunica</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Keramička ljuskica, po zubu</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+<div class="price-row"><span>Totalna proteza</span><span class="dots" aria-hidden="true"></span><span>od [00] €</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="price-note">
+<p>Ovo su početne cijene najčešćih zahvata. Točan iznos za vaš slučaj dobivate u pisanom planu terapije nakon pregleda.</p>
+<a class="btn" href="#kontakt">Pošalji upit za pregled</a>
+</div>
+</div>
+</section>
+
+<section class="sec sec-dark" id="klijenti">
+<div class="wrap">
+<div class="sec-head">
+<div>
+<h2>Iskustva naših pacijenata</h2>
+</div>
+<p class="muted"><br></p>
+</div>
+
+<div class="quotes">
+<figure class="quote">
+<blockquote>[CITAT PACIJENTA - npr. kako je izgledao prvi pregled]</blockquote>
+<figcaption><strong>[IME I PREZIME]</strong>[USLUGA, npr. Inicijalni pregled]</figcaption>
+</figure>
+<figure class="quote">
+<blockquote>[CITAT PACIJENTA - npr. iskustvo s implantatom]</blockquote>
+<figcaption><strong>[IME I PREZIME]</strong>[USLUGA, npr. Implantologija]</figcaption>
+</figure>
+<figure class="quote">
+<blockquote>[CITAT PACIJENTA - npr. iskustvo s estetskim zahvatom]</blockquote>
+<figcaption><strong>[IME I PREZIME]</strong>[USLUGA, npr. Estetska stomatologija]</figcaption>
+</figure>
+</div>
+
+<div class="ba-head">
+<h3>Prije i poslije</h3>
+<p class="muted">Fotografije su snimljene u ordinaciji, bez naknadne obrade.</p>
+</div>
+<div class="ba">
+<div>
+<div class="ba-pair">
+<div class="ph">Prije</div>
+<div class="ph">Poslije</div>
+</div>
+<p class="ba-cap"><strong>Estetska korekcija</strong><span class="muted">[Kratki opis zahvata i trajanje terapije]</span></p>
+</div>
+<div>
+<div class="ba-pair">
+<div class="ph">Prije</div>
+<div class="ph">Poslije</div>
+</div>
+<p class="ba-cap"><strong>Protetika</strong><span class="muted">[Kratki opis zahvata i trajanje terapije]</span></p>
+</div>
+<div>
+<div class="ba-pair">
+<div class="ph">Prije</div>
+<div class="ph">Poslije</div>
+</div>
+<p class="ba-cap"><strong>Ortodoncija</strong><span class="muted">[Kratki opis zahvata i trajanje terapije]</span></p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="o-nama">
+<div class="wrap about-grid">
+<div style="grid-column: 1 / -1">
+<h2>Kod nas nema zubarske nelagode</h2>
+<img class="about-ph" src="tim-ordinacija.jpg" alt="Stomatolog i asistentica u ordinaciji DentaWhite" style="display: block; width: 100%; height: 400px; object-fit: cover; object-position: 50% 25%; border-radius: 4px">
+<p class="lead about-intro">Ljudi najčešće odgađaju stomatologa iz tri razloga: boje se boli, ne znaju koliko će platiti i nisu sigurni koja je terapija prava. Sve tri brige rješavamo prije nego što sjednete u stolicu.</p>
+<ul class="benefits">
+<li>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c4.5-2.5 8-6.2 8-11V5l-8-3-8 3v5c0 4.8 3.5 8.5 8 11z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
+<strong>Bez boli i žurbe</strong>
+<span style="font-size: 18px">Zahvate radimo uz anesteziju prilagođenu vama, a tempo rada dogovaramo zajedno.</span>
+</li>
+<li>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 13h7M9 17h5"></path></svg>
+<strong>Cijena prije zahvata</strong>
+<span style="font-size: 18px">Dobivate pisani plan terapije s točnom cijenom. Ništa ne radimo dok ga ne odobrite.</span>
+</li>
+<li>
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2C4D7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<strong>Vrijeme za odluku</strong>
+<span style="font-size: 18px">Prvi pregled traje 30 minuta. Objasnimo nalaz, pokažemo moguća rješenja, a odluku donosite vi.</span>
+</li>
+</ul>
+<div class="benefits-cta">
+<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled</a>
+</div>
+</div>
+<div class="lead-doc">
+<h3>[Dr. med. dent. Ime Prezime]</h3>
+<p>Voditelj ordinacije i specijalist [SPECIJALIZACIJA, npr. oralne kirurgije].</p>
+<p>Najviše vremena posvećuje složenijim slučajevima: implantatima, opsežnim protetskim radovima i terapijama koje traju više mjeseci. Takve planove uvijek radi osobno, na temelju 3D snimke i razgovora s pacijentom.</p>
+<p>Svaki korak objašnjava jednostavnim riječima i bez žurbe. Smatra da je pacijent koji razumije svoju terapiju ujedno i najmirniji pacijent.</p>
+<p>Redovito prati nove metode i materijale, a u ordinaciju ih uvodi tek kad ih sam provjeri u praksi.</p>
+</div>
+<img class="about-ph" src="voditelj-ordinacije.jpg" alt="[Ime Prezime], voditelj ordinacije" style="display: block; width: 100%; height: 440px; object-fit: cover; object-position: 32% center; border-radius: 4px">
+</div>
+</section>
+
+<section class="sec sec-accent" id="kontakt">
+<div class="wrap contact-grid">
+<div>
+<h2>Pošaljite upit za pregled</h2>
+<p class="lead">Napišite nam što vas muči ili kad vam odgovara doći. Javljamo se telefonom s prijedlogom termina.</p>
+
+<form class="form" action="#" method="post">
+<div class="row2">
+<div class="field">
+<label for="ime">Ime i prezime</label>
+<input id="ime" name="ime" type="text" autocomplete="name" required="required">
+</div>
+<div class="field">
+<label for="telefon">Telefon</label>
+<input id="telefon" name="telefon" type="tel" autocomplete="tel" required="required">
+</div>
+</div>
+<div class="row2">
+<div class="field">
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" autocomplete="email">
+</div>
+<div class="field">
+<label for="usluga">Što vas zanima</label>
+<select id="usluga" name="usluga">
+<option>Inicijalni pregled</option>
+<option>Sanacija karijesa</option>
+<option>Estetska stomatologija</option>
+<option>Stomatološka protetika</option>
+<option>Parodontologija</option>
+<option>Implantologija</option>
+<option>Endodoncija</option>
+<option>Ortodoncija</option>
+<option>3D CBCT dijagnostika</option>
+<option>Nisam siguran/sigurna</option>
+</select>
+</div>
+</div>
+<div class="field">
+<label for="termin">Kad vam najviše odgovara</label>
+<select id="termin" name="termin">
+<option>Svejedno</option>
+<option>Prijepodne</option>
+<option>Poslijepodne</option>
+</select>
+</div>
+<div class="field">
+<label for="poruka">Poruka (nije obavezno)</label>
+<textarea id="poruka" name="poruka" rows="5"></textarea>
+</div>
+<label class="check"><input type="checkbox" name="privola" required="required"><span>Slažem se da DentaWhite koristi moje podatke kako bi odgovorio na ovaj upit. <a href="#">Pravila privatnosti</a></span></label>
+<div class="form-foot">
+<button class="btn" type="submit">Pošalji upit za pregled</button>
+
+</div>
+</form>
+</div>
+
+<aside>
+<dl class="info">
+<div><dt>Telefon</dt><dd><a href="tel:[TELEFON]">[TELEFON]</a></dd></div>
+<div><dt>E-mail</dt><dd><a href="mailto:[EMAIL]">[EMAIL]</a></dd></div>
+<div><dt>Adresa</dt><dd>[ULICA I KUĆNI BROJ]<br>[POŠTANSKI BROJ I GRAD]</dd></div>
+<div><dt>Radno vrijeme</dt><dd>Pon - Pet: [OD - DO]<br>Sub: [OD - DO]</dd></div>
+<div><dt>Parking</dt><dd>[GDJE SE MOŽE PARKIRATI]</dd></div>
+</dl>
+<div class="map" style="border: 1px solid #E3E4DF; border-radius: 4px; overflow: hidden">
+<svg width="100%" height="100%" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Karta Zagreba s oznakom lokacije ordinacije">
+<rect width="480" height="260" fill="#EEEEEA"></rect>
+<path d="M330 0h90v38h-90z" fill="#DCE5D3"></path>
+<path d="M190 40c20-8 45-6 52 8 4 9-6 18-20 18h-26c-12 0-18-18-6-26z" fill="#DCE5D3"></path>
+<path d="M232 84h14v28h-14z" fill="#DCE5D3"></path>
+<path d="M0 170c60 4 110 10 160 20s100 14 150 22 120 18 170 22v14c-50-4-120-14-170-22s-100-12-150-22S60 188 0 184z" fill="#C9D6E3"></path>
+<ellipse cx="62" cy="214" rx="34" ry="9" fill="#C9D6E3"></ellipse>
+<ellipse cx="300" cy="226" rx="12" ry="6" fill="#C9D6E3"></ellipse>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<g stroke="#D9DAD5" stroke-width="7">
+<path d="M0 150c120-2 240 0 480 6"></path>
+<path d="M120 121h270"></path>
+<path d="M60 72c60-2 120 0 171 2"></path>
+<path d="M195 78v126"></path>
+<path d="M285 84v122"></path>
+<path d="M231 74c40 2 90 4 150 6s70 4 99 6"></path>
+<path d="M150 260c10-40 30-70 45-56"></path>
+<path d="M390 0v260"></path>
+</g>
+<g stroke="#FFFFFF" stroke-width="4.5">
+<path d="M0 150c120-2 240 0 480 6"></path>
+<path d="M120 121h270"></path>
+<path d="M60 72c60-2 120 0 171 2"></path>
+<path d="M195 78v126"></path>
+<path d="M285 84v122"></path>
+<path d="M231 74c40 2 90 4 150 6s70 4 99 6"></path>
+<path d="M150 260c10-40 30-70 45-56"></path>
+<path d="M390 0v260"></path>
+</g>
+<path d="M0 106c160 0 320 2 480 4" stroke="#B9BBB5" stroke-width="1.5" stroke-dasharray="6 4"></path>
+<path d="M20 70v-60M100 70V20M150 72V0M260 76V30M320 78V10M240 121v29M330 121v31M150 121v28M60 150v20M430 156v-60" stroke="#FFFFFF" stroke-width="2.5"></path>
+</g>
+<g font-family="Manrope, system-ui, sans-serif" font-size="10" fill="#5A606B" font-weight="600">
+<text x="160" y="185" transform="rotate(5 160 185)">Sava</text>
+<text x="40" y="232">Jarun</text>
+<text x="345" y="24">Maksimir</text>
+<text x="300" y="117">Vukovarska</text>
+<text x="20" y="146">Slavonska avenija</text>
+<text x="70" y="66">Ilica</text>
+<text x="196" y="36">Gornji grad</text>
+</g>
+<g transform="translate(262 100)">
+<path d="M0 0c-8-11-13-17-13-24a13 13 0 0126 0c0 7-5 13-13 24z" fill="#2C4D7E"></path>
+<circle cx="0" cy="-24" r="5" fill="#FFFFFF"></circle>
+</g>
+</svg>
+</div>
+</aside>
+</div>
+</section>
+
+</main>
+
+<footer class="foot">
+<div class="wrap foot-in">
+<span>© 2026 DentaWhite · [NAZIV TVRTKE I OIB]</span>
+<nav aria-label="Podnožje">
+<a href="#o-nama">O nama</a>
+<a href="#usluge">Usluge</a>
+<a href="#kontakt">Kontakt</a>
+<a href="#">Pravila privatnosti</a>
+</nav>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
