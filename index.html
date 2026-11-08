@@ -266,6 +266,46 @@
   .btn{width:100%}
   .nav .btn{width:auto}
   }
+
+  .btn{gap:10px;transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .12s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-arrow{display:inline-flex;transition:transform .2s ease}
+  .btn:hover .btn-arrow{transform:translateX(3px)}
+  .field input,.field select,.field textarea{transition:border-color .2s ease,outline-color .2s ease}
+  .svc{transition:transform .25s ease,border-color .25s ease}
+  .svc-img{transition:transform .5s ease}
+  .benefits li svg{transition:opacity .3s ease}
+  .benefits li:hover svg{opacity:.2}
+  .svc{interpolate-size:allow-keywords}
+  @keyframes dwUp{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+  @keyframes dwZoom{from{scale:1}to{scale:1.04}}
+  @keyframes dwPin{0%{opacity:0;translate:0 -26px}70%{opacity:1;translate:0 3px}100%{opacity:1;translate:0 0}}
+  @media (prefers-reduced-motion: no-preference){
+  .svc:hover{transform:translateY(-4px)}
+  .svc:hover .svc-img{transform:scale(1.04)}
+  .hero-copy h1{animation:dwUp .6s ease-out both}
+  .hero-copy .hero-mob{animation:dwUp .6s ease-out .08s both}
+  .hero-copy .actions{animation:dwUp .6s ease-out .14s both}
+  .hero .fact{animation:dwUp .6s ease-out both}
+  .hero .fact:nth-child(1){animation-delay:.3s}
+  .hero .fact:nth-child(2){animation-delay:.4s}
+  .hero .fact:nth-child(3){animation-delay:.5s}
+  .hero-bg{transform-origin:65% 50%;animation:dwZoom 7s ease-out both}
+  }
+  @supports selector(::details-content){
+  @media (prefers-reduced-motion: no-preference){
+  .svc::details-content{block-size:0;opacity:0;overflow:hidden;transition:block-size .35s ease,opacity .3s ease,content-visibility .35s allow-discrete}
+  .svc[open]::details-content{block-size:auto;opacity:1}
+  }
+  }
+  @supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+  .sec .sec-head,.svc-group-title,.svc,.after-svc,.price-cat,.price-note,.quote,.ba>div,.ba-head,.about-ph,.about-intro,.benefits li,.benefits-cta,.lead-doc,.contact-grid>div,.contact-grid>aside{animation:dwUp linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+  .svc-grid .svc:nth-child(2),.benefits li:nth-child(2),.quote:nth-child(2),.ba>div:nth-child(2){animation-range:entry 8% entry 53%}
+  .svc-grid .svc:nth-child(3),.benefits li:nth-child(3),.quote:nth-child(3),.ba>div:nth-child(3){animation-range:entry 16% entry 61%}
+  .map-pin{animation:dwPin linear both;animation-timeline:view();animation-range:entry 30% cover 45%}
+  }
+  }
   </style>
   <style>html{scroll-behavior:smooth}</style>
 </head>
@@ -333,7 +373,7 @@ DentaWhite
 <h1>Bijeli osmijeh, bez žurbe i muke</h1>
 <img class="hero-mob" src="hero-pregled.jpg" alt="" aria-hidden="true">
 <div class="actions">
-<a class="btn" href="#kontakt">Pošalji upit za pregled</a>
+<a class="btn" href="#kontakt">Pošalji upit za pregled<span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </div>
@@ -513,7 +553,7 @@ DentaWhite
 
 <div class="after-svc">
 <p>Ne znate što vam treba?<br>Počnite s pregledom.</p>
-<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled</a>
+<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled<span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </section>
@@ -587,7 +627,7 @@ DentaWhite
 </div>
 <div class="price-note">
 <p>Ovo su početne cijene najčešćih zahvata. Točan iznos za vaš slučaj dobivate u pisanom planu terapije nakon pregleda.</p>
-<a class="btn" href="#kontakt">Pošalji upit za pregled</a>
+<a class="btn" href="#kontakt">Pošalji upit za pregled<span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </section>
@@ -670,7 +710,7 @@ DentaWhite
 </li>
 </ul>
 <div class="benefits-cta">
-<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled</a>
+<a class="btn btn-lg" href="#kontakt">Pošalji upit za pregled<span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 <div class="lead-doc">
@@ -736,7 +776,7 @@ DentaWhite
 </div>
 <label class="check"><input type="checkbox" name="privola" required="required"><span>Slažem se da DentaWhite koristi moje podatke kako bi odgovorio na ovaj upit. <a href="#">Pravila privatnosti</a></span></label>
 <div class="form-foot">
-<button class="btn" type="submit">Pošalji upit za pregled</button>
+<button class="btn" type="submit">Pošalji upit za pregled<span class="btn-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
 
 </div>
 </form>
@@ -793,8 +833,10 @@ DentaWhite
 <text x="196" y="36">Gornji grad</text>
 </g>
 <g transform="translate(262 100)">
+<g class="map-pin">
 <path d="M0 0c-8-11-13-17-13-24a13 13 0 0126 0c0 7-5 13-13 24z" fill="#2C4D7E"></path>
 <circle cx="0" cy="-24" r="5" fill="#FFFFFF"></circle>
+</g>
 </g>
 </svg>
 </div>
