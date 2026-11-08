@@ -271,38 +271,44 @@
   .btn:active{transform:scale(.98)}
   .btn-arrow{display:inline-flex;transition:transform .2s ease}
   .btn:hover .btn-arrow{transform:translateX(3px)}
-  .field input,.field select,.field textarea{transition:border-color .2s ease,outline-color .2s ease}
-  .svc{transition:transform .25s ease,border-color .25s ease}
+  .field input,.field select,.field textarea{transition:border-color .2s ease,outline-color .2s ease,background-color .35s ease}
+  .svc{transition:transform .35s ease,border-color .35s ease,background-color .35s ease,box-shadow .35s ease}
   .svc-img{transition:transform .5s ease}
   .benefits li svg{transition:opacity .3s ease}
   .benefits li:hover svg{opacity:.2}
-  .svc{interpolate-size:allow-keywords}
-  @keyframes dwUp{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
-  @keyframes dwZoom{from{scale:1}to{scale:1.04}}
+  /* stanje zatvaranja kućice (JS): plus se vraća dok se kućica zatvara */
+  .svc[open].closing .svc-toggle{transform:none;background:#FFFFFF}
+  .svc[open].closing:hover .svc-toggle,.svc[open].closing summary:hover .svc-toggle{background:#EEF2F7}
+  /* 3) linkovi u headeru */
+  .nav-links a{display:inline-block;transition:transform .3s ease,border-color .3s ease}
+  /* 4) kućice u hero sekciji kao zasebni objekti */
+  .facts{background:transparent;gap:3px}
+  .fact{position:relative;background:#2C4D7E;border:0;border-radius:8px;transition:transform .35s ease,box-shadow .35s ease}
+  /* 7) placeholder fotografije u prije/poslije dijelu */
+  .ba-pair .ph{position:relative;transition:transform .35s ease,box-shadow .35s ease}
+  /* 8) tamnoplave kućice u 5. sekciji */
+  .benefits li{transition:transform .35s ease,box-shadow .35s ease}
+  /* 10) tanka bijela linija ispod placeholder teksta u kontaktu */
+  .info dd{width:fit-content;max-width:100%;padding-bottom:3px;background:linear-gradient(#FFFFFF,#FFFFFF) no-repeat 0 100%/0 1px;transition:background-size .4s ease}
+  @keyframes dwZoom{from{scale:1}to{scale:1.1}}
   @keyframes dwPin{0%{opacity:0;translate:0 -26px}70%{opacity:1;translate:0 3px}100%{opacity:1;translate:0 0}}
   @media (prefers-reduced-motion: no-preference){
-  .svc:hover{transform:translateY(-4px)}
+  /* 1) pojavljivanje sekcija iz bijeline (klasu dw-anim dodaje JS, bez JS-a je sve vidljivo) */
+  .dw-anim .rv{opacity:0;transition:opacity 1.3s ease-out}
+  .dw-anim .rv.in{opacity:1}
+  /* 2) postupno približavanje pozadinske slike, 3 sekunde, jednom */
+  .hero-bg{transform-origin:65% 50%;animation:dwZoom 3s ease-out both}
+  .nav-links a:hover{transform:translateY(-3px) scale(1.08)}
+  .fact:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 14px 28px rgba(31,57,96,.3);z-index:2}
+  .svc:hover{transform:translateY(-5px) scale(1.02);background:#EEF2F7;box-shadow:0 12px 24px rgba(44,77,126,.18);z-index:2}
   .svc:hover .svc-img{transform:scale(1.04)}
-  .hero-copy h1{animation:dwUp .6s ease-out both}
-  .hero-copy .hero-mob{animation:dwUp .6s ease-out .08s both}
-  .hero-copy .actions{animation:dwUp .6s ease-out .14s both}
-  .hero .fact{animation:dwUp .6s ease-out both}
-  .hero .fact:nth-child(1){animation-delay:.3s}
-  .hero .fact:nth-child(2){animation-delay:.4s}
-  .hero .fact:nth-child(3){animation-delay:.5s}
-  .hero-bg{transform-origin:65% 50%;animation:dwZoom 7s ease-out both}
-  }
-  @supports selector(::details-content){
-  @media (prefers-reduced-motion: no-preference){
-  .svc::details-content{block-size:0;opacity:0;overflow:hidden;transition:block-size .35s ease,opacity .3s ease,content-visibility .35s allow-discrete}
-  .svc[open]::details-content{block-size:auto;opacity:1}
-  }
+  .ba-pair .ph:hover{transform:translateY(-6px) scale(1.06);box-shadow:0 12px 24px rgba(0,0,0,.28);z-index:2}
+  .benefits li:hover{transform:translateY(-6px) scale(1.04);box-shadow:0 14px 28px rgba(20,35,60,.35);z-index:2}
+  .field input:hover,.field select:hover,.field textarea:hover{background-color:#EEF2F7}
+  .info dd:hover{background-size:100% 1px}
   }
   @supports (animation-timeline: view()){
   @media (prefers-reduced-motion: no-preference){
-  .sec .sec-head,.svc-group-title,.svc,.after-svc,.price-cat,.price-note,.quote,.ba>div,.ba-head,.about-ph,.about-intro,.benefits li,.benefits-cta,.lead-doc,.contact-grid>div,.contact-grid>aside{animation:dwUp linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
-  .svc-grid .svc:nth-child(2),.benefits li:nth-child(2),.quote:nth-child(2),.ba>div:nth-child(2){animation-range:entry 8% entry 53%}
-  .svc-grid .svc:nth-child(3),.benefits li:nth-child(3),.quote:nth-child(3),.ba>div:nth-child(3){animation-range:entry 16% entry 61%}
   .map-pin{animation:dwPin linear both;animation-timeline:view();animation-range:entry 30% cover 45%}
   }
   }
@@ -859,5 +865,89 @@ DentaWhite
 </footer>
 
 </div>
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reduce || reduce.matches) return; // bez animacija: sve ostaje vidljivo i radi nativno
+
+  /* 1) Sekcije se pojavljuju iz bijeline, redom od vrha prema dolje */
+  try {
+    if ('IntersectionObserver' in window) {
+      var root = document.documentElement;
+      var targets = document.querySelectorAll('.nav, main > section, .foot');
+      var show = function (el, delay, instant) {
+        if (el.classList.contains('in')) return;
+        io.unobserve(el);
+        if (instant) {
+          el.style.transition = 'none';
+          el.classList.add('in');
+          void el.offsetWidth;
+          el.style.transition = '';
+        } else {
+          if (delay) el.style.transitionDelay = delay + 'ms';
+          el.classList.add('in');
+          setTimeout(function () { el.style.transitionDelay = ''; }, delay + 1500);
+        }
+      };
+      var io = new IntersectionObserver(function (entries) {
+        var visible = [];
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visible.push(e);
+          else if (e.boundingClientRect.top < 0) show(e.target, 0, true); // već iznad (npr. skok na #sidro)
+        });
+        visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+        visible.forEach(function (e, i) { show(e.target, i * 180, false); });
+      }, { threshold: 0.06 });
+      try {
+        Array.prototype.forEach.call(targets, function (t) { t.classList.add('rv'); io.observe(t); });
+        root.classList.add('dw-anim');
+      } catch (err) {
+        root.classList.remove('dw-anim');
+        Array.prototype.forEach.call(targets, function (t) { t.classList.remove('rv'); });
+      }
+    }
+  } catch (e) {}
+
+  /* 6) Blago i opušteno otvaranje i zatvaranje kućica usluga */
+  try {
+    Array.prototype.forEach.call(document.querySelectorAll('details.svc'), function (d) {
+      var summary = d.querySelector('summary');
+      var body = d.querySelector('.svc-body');
+      if (!summary || !d.animate) return;
+      var anim = null, fade = null;
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        var start = d.offsetHeight;
+        var opening = !d.open || d.classList.contains('closing');
+        if (anim) { anim.cancel(); anim = null; }
+        if (fade) { fade.cancel(); fade = null; }
+        if (opening) {
+          d.classList.remove('closing');
+          d.open = true;
+          var end = d.offsetHeight;
+          anim = d.animate({ height: [start + 'px', end + 'px'] }, { duration: 500, easing: 'ease', fill: 'forwards' });
+          if (body) fade = body.animate({ opacity: [0, 1] }, { duration: 500, easing: 'ease' });
+          var a = anim;
+          a.onfinish = function () { if (anim === a) { a.cancel(); anim = null; } };
+        } else {
+          var closed = summary.offsetHeight + (d.offsetHeight - d.clientHeight);
+          d.classList.add('closing');
+          if (body) fade = body.animate({ opacity: [1, 0] }, { duration: 350, easing: 'ease', fill: 'forwards' });
+          anim = d.animate({ height: [start + 'px', closed + 'px'] }, { duration: 450, easing: 'ease', fill: 'forwards' });
+          var c = anim;
+          c.onfinish = function () {
+            if (anim !== c) return;
+            d.open = false;
+            d.classList.remove('closing');
+            c.cancel(); anim = null;
+            if (fade) { fade.cancel(); fade = null; }
+          };
+        }
+      });
+    });
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
